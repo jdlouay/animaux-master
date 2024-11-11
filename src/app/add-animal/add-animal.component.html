@@ -1,0 +1,42 @@
+<div class="container">
+  <div>
+    <h2>Ajouter un Animal :</h2>
+  </div>
+  <form #animalForm="ngForm">
+    <div class="col-sm-2 col-md-2 col-lg-2">
+      <label>ID Animal</label>
+      <input type="text" [(ngModel)]="newAnimal.idAnimal" name="idAnimal" class="form-control" required>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Nom Animal</label>
+      <input type="text" [(ngModel)]="newAnimal.nomAnimal" name="nomAnimal" class="form-control" required>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Espèce Animal</label>
+      <input type="text" [(ngModel)]="newAnimal.especeAnimal" name="especeAnimal" class="form-control" required>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Date de Naissance</label>
+      <input type="date" [(ngModel)]="newAnimal.dateNaissance" name="dateNaissance" class="form-control" required>
+    </div>
+    <!-- Nouvelle section pour sélectionner le groupe -->
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Groupe</label>
+      <select class="form-control form-control-lg" [(ngModel)]="newIdgroupe" name="idGroupe" required>
+        <option *ngFor="let groupe of groupes" [value]="groupe.idGroupe">
+          {{ groupe.nomGroupe }}
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-4 col-md-4 col-lg-4">
+      <label>Email</label>
+      <input type="email" [(ngModel)]="newAnimal.email" name="email" class="form-control" required>
+      <div *ngIf="animalForm.form.controls['email']?.invalid && animalForm.form.controls['email']?.touched" class="text-danger">
+          L'email est obligatoire et doit être valide.
+      </div>
+    </div>
+    <div class="mt-2">
+      <button type="submit" (click)="addAnimal()" class="btn btn-success" [disabled]="!animalForm.form.valid">Ajouter</button>
+    </div>
+  </form>
+</div>
