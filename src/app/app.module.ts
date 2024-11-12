@@ -12,6 +12,8 @@ import { FilterPipe } from './filter.pipe';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { ListeGroupesComponent } from './liste-groupes/liste-groupes.component';
+import { UpdateGroupeComponent } from './update-groupe/update-groupe.component';
 
 
 // Importation du composant UpdateAnimal
@@ -29,6 +31,8 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     LoginComponent,
     RegisterComponent,
     ForbiddenComponent,
+    ListeGroupesComponent,
+    UpdateGroupeComponent,
    
 
    // Déclaration du composant UpdateAnimal

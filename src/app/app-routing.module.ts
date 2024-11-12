@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { animalGuard } from './animal.guard';
+import { ListeGroupesComponent } from './liste-groupes/liste-groupes.component';
 
 
  // Assurez-vous que l'import est correct
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path:'register',component:RegisterComponent},
   {path : "add-animal", component : AddAnimalComponent, canActivate:[animalGuard]},
+  { path: 'listeGroupes', component: ListeGroupesComponent }, // Route pour afficher la liste des groupes
 
   {path: 'app-forbidden', component: ForbiddenComponent},
   { path: 'updateAnimal/:id', component: UpdateAnimalComponent }

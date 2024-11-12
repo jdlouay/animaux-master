@@ -7,6 +7,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AnimalService {
+  ajouterGroupe(updatedGroupe: Groupe) {
+    throw new Error('Method not implemented.');
+  }
   groupes: Groupe[] = [
     { idGroupe: 1, nomGroupe: "Mammifères" },
     { idGroupe: 2, nomGroupe: "Oiseaux" }
@@ -48,6 +51,7 @@ export class AnimalService {
   ajouterAnimal(animal: Animal): void {
     this.animaux.push(animal);
   }
+  
 
   // Méthode pour consulter un animal par son ID
   consulterAnimal(id: number): Animal {
@@ -80,6 +84,8 @@ export class AnimalService {
   listeGroupes(): Groupe[] {
     return this.groupes;
   }
+
+  
 
   // Méthode pour consulter un groupe par son ID
   consulterGroupe(id: number): Groupe {

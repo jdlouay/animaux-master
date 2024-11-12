@@ -1,0 +1,30 @@
+<div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <app-update-groupe
+      [groupe]="updatedGroup"
+      [ajout]="ajout"
+      (groupeUpdated)="onGroupeUpdated($event)"
+    ></app-update-groupe>
+  </div>
+  
+  <div class="container">
+    <h2>Liste des Groupes</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom du Groupe</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let groupe of groupes">
+          <td>{{ groupe.idGroupe }}</td>
+          <td>{{ groupe.nomGroupe }}</td>
+          <td>
+            <button class="btn btn-success" (click)="updateGroupe(groupe)">Modifier</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
